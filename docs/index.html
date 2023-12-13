@@ -44,6 +44,10 @@
         font-family: "Apple II Pro";
         src: url("_media/Apple-II-Pro.otf");
       }
+      @font-face {
+        font-family: "04b03";
+        src: url("_media/04b03.ttf");
+      }
 
       @keyframes bg-motion {
         0% {
@@ -77,7 +81,8 @@
       :root {
         --theme-hue: 164;
         --mono-hue: 222;
-        --heading-font-family: "Apple II Pro", monospace;
+        /* --heading-font-family: "Apple II Pro", monospace; */
+        --heading-font-family: "04b03", monospace;
         --cover-button-color: #fff;
         --cover-button-border: 1px solid #fff;
         --cover-blockquote-color: #fff;
@@ -265,6 +270,10 @@
         left: initial;
         animation-delay: 2.75s;
         animation-duration: 2.75s;
+      }
+
+      .content img {
+        border-radius: 16px;
       }
     </style>
   </head>
