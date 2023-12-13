@@ -32,7 +32,7 @@ Now that our dependencies installed, let's also install `turbo-cli`:
 sh -c "$(curl -sSfL https://turbo.computer/install.sh)"
 ``````
 
-?> The installer may ask for your password to place the command in /usr/local/bin. Alternatively, download it from https://turbo.computer/turbo-cli and manually move it there. Currently, precompiled `turbo-cli` binaries are available for macOS only. For other platforms, contact [@jozanza](https://twitter.com/jozanza) on Twitter.
+?> The installer may ask for your password to place the command in /usr/local/bin. If you don't want to do this, you can manually download the [Mac OS ARM (64-bit)](https://turbo.computer/bin/aarch64-apple-darwin/turbo-cli) or [Linux x86 (64-bit)](https://turbo.computer/bin/x86_64-unknown-linux-gnu/turbo-cli) builds and move them to that directory. If you need a binary for another platform, contact [Turbo](https://twitter.com/makegamesfast) on Twitter.
 
 Verify the installation with:
 
