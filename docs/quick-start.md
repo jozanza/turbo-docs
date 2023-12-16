@@ -82,7 +82,7 @@ Options:
 
 #### **Windows**
 
-1. Download the 64-bit release for [Windows x86](https://turbo.computer/bin/x86_64-pc-windows-msvc/turbo-cli.exe)
+1. Download the 64-bit release for [Windows x86](https://turbo.computer/bin/x86_64-pc-windows-msvc/turbo-cli.exe.zip)
 2. If it doesn't already exist, create a folder at `C:\Users\YOUR_USERNAME\bin`
 3. Move `turbo-cli.exe` into that folder
 
