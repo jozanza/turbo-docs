@@ -174,7 +174,7 @@ use my_anchor_program::MyAnchorAccount;
 
 let account: AccountInfo = ...;
 // You will need to skip the first 8 bytes when decoding an Anchor struct.
-// Those bytes are reserved for "discriminator" – basically, the struct's IDL schema identifier.
+// Those bytes are reserved for a "discriminator" – basically, the struct's IDL schema identifier.
 match MyAnchorAccount::deserialize(&account.data[8..]) {
     Ok(data) => {
         // Do stuff with deserialized data.
