@@ -1,3 +1,11 @@
+## Deploying
+
+`turbo-cli` doesn't have a built-in commands for bundling/deploying your game yet.
+
+However, you can follow these instructions to turn your Turbo game into a PWA:
+
+&rarr; https://github.com/jozanza/turbo-web-template
+
 ## Solana
 
 
