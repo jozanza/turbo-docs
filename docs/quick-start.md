@@ -8,9 +8,23 @@
 
 First, install Rust if it's not already on your system:
 
+<!-- tabs:start -->
+
+#### **macOS / Linux**
+
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
+
+Or follow the instructions at https://www.rust-lang.org/tools/install
+
+#### **Windows**
+
+Follow the **Recommended** instructions using `rustup` at https://www.rust-lang.org/tools/install
+
+!> `turbo-cli` cannot open a window in Windows Subsystem for Linux at the moment due to some quirks of the Wayland display server protocol it uses.
+
+<!-- tabs:end -->
 
 Next, add the necessary WebAssembly targets:
 
@@ -28,11 +42,19 @@ cargo install cargo-watch
 
 Now that our dependencies installed, let's also install `turbo-cli`:
 
+<!-- tabs:start -->
+
+#### **macOS / Linux**
+
+Install `turbo-cli` by running this script:
+
 ```bash
 sh -c "$(curl -sSfL https://turbo.computer/install.sh)"
-``````
+```
 
-?> The installer may ask for your password to place the command in `/usr/local/bin`. If you don't want to do this, you can manually download the [Mac OS ARM (64-bit)](https://turbo.computer/bin/aarch64-apple-darwin/turbo-cli) or [Linux x86 (64-bit)](https://turbo.computer/bin/x86_64-unknown-linux-gnu/turbo-cli) builds and move them to that directory. If you need a binary for another platform, contact [Turbo](https://twitter.com/makegamesfast) on Twitter.
+?> The installer will ask for your password to place the command in `/usr/local/bin`. If you don't want to do this, you can manually download the 64-bit releases and move them to a directory in your `PATH`: [Mac OS ARM](https://turbo.computer/bin/aarch64-apple-darwin/turbo-cli), [Linux x86](https://turbo.computer/bin/x86_64-unknown-linux-gnu/turbo-cli)
+<br /><br />
+If you need a binary for another platform, contact [Turbo](https://twitter.com/makegamesfast) on Twitter.
 
 Verify the installation with:
 
@@ -58,7 +80,45 @@ Options:
   -V, --version  Print version
 ```
 
+#### **Windows**
+
+1. Download the 64-bit release for [Windows x86](https://turbo.computer/bin/x86_64-pc-windows-msvc/turbo-cli.exe)
+2. If it doesn't already exist, create a folder at `C:\Users\YOUR_USERNAME\bin`
+3. Move `turbo-cli.exe` into that folder
+
+Make sure you have [Git for Windows](https://git-scm.com/download/win) installed.
+
+**Open Git Bash**. Verify the installation with:
+
+```bash
+turbo-cli -h
+```
+
+If successful, you'll see `turbo-cli`'s help documentation:
+
+```bash
+Run Turbo games natively on desktop
+
+Usage: turbo-cli.exe <COMMAND>
+
+Commands:
+  init  Initializes a new Turbo project in Rust
+  run   Runs a Rust Turbo project
+  help  Print this message or the help of the given subcommand(s)
+
+Options:
+  -v, --version  Print version
+  -h, --help     Print help
+  -V, --version  Print version
+```
+
+<!-- tabs:end -->
+
+
+
 ## Development
+
+?> Windows users should always run `turbo-cli` in Git Bash.
 
 ### Creating a Game
 
