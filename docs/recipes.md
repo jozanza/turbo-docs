@@ -69,8 +69,12 @@ let user_pubkey = solana::user_pubkey();
 ```rust
 use turbo::solana::solana_sdk;
 use solana_sdk::pubkey::Pubkey;
+use std::str::FromStr;
 
-let program_id: Pubkey = ...;
+ let program_id_str = "insert_id_here";
+    let program_id: Pubkey = Pubkey::from_str(program_id_str)
+    .expect("Error parsing program ID");
+
 let (pda_pubkey, bump_seed) = Pubkey::find_program_address(
     &[...],
     &program_id,
@@ -88,8 +92,12 @@ use turbo::solana::{anchor, solana_sdk};
 use anchor::Program;
 use solana_sdk::{instruction::AccountMeta, pubkey::Pubkey};
 use my_anchor_program::instructions::DoSomething;
+use std::str::FromStr;
 
-let program_id: Pubkey = ...;
+ let program_id_str = "insert_id_here";
+ let program_id: Pubkey = Pubkey::from_str(program_id_str)
+  .expect("Error parsing ID");
+
 let instruction_name = "name_of_anchor_instruction";
 let accounts: Vec<AccountMeta> = vec![...];
 let args = DoSomething { ... };
@@ -97,7 +105,7 @@ let tx_hash = Program::new(program_id)
     .instruction(instruction_name)
     .accounts(accounts)
     .args(args)
-    .send();
+    .send();  
 ```
 
 #### Solana SDK
@@ -112,8 +120,12 @@ use solana_sdk::{
     pubkey::Pubkey,
     transaction::Transaction
 };
+use std::str::FromStr;
 
-let program_id: Pubkey = ...;
+ let program_id_str = "insert_id_here";
+ let program_id: Pubkey = Pubkey::from_str(program_id_str)
+ .expect("Error parsing program ID");
+
 let accounts: Vec<AccountMeta> = vec![...];
 let data = vec![...];
 let instruction = Instruction {
@@ -194,3 +206,4 @@ match MyAnchorAccount::deserialize(&account.data[8..]) {
 ```
 
 ?> When slicing off the discriminator, it's a good idea to check that the account data is >= 8. Slicing a smaller Vec will panic. If you are interacting with a non-Anchor program that borsh-encodes account data, don't skip the first 8 bytes.
+
