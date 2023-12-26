@@ -14,7 +14,7 @@ The game configuration is where you define metadata and settings for your game.
 ```rust
 // Define the game configuration using the turbo::cfg! macro
 turbo::cfg! {r#"
-    name = "Pancake Cat"
+    name = "Pancake Devourer"
     version = "1.0.0"
     author = "Turbo"
     description = "Catch falling pancakes!"
