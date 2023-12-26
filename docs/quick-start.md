@@ -4,7 +4,7 @@
 
 ## Installation
 
-### Dependencies
+### Dependencies   
 
 First, install Rust if it's not already on your system:
 
