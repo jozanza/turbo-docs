@@ -172,8 +172,18 @@ text!("Let's gooo!", x = 32, y = 48, color = 0xff00ffff, font = Font::L);
 
 Congratulations on starting your game development journey! 🎉
 
-Ready to level up? To dive deeper, explore drawing shapes, animating sprites, handling gamepad input, game settings, state modeling, and Web3 APIs...
+Ready to level up your skills?
 
-#### [Check out the Tutorials Section &rarr;](/tutorial)
+Dive deeper into exciting techniques like:
+
+- Drawing shapes
+- Animating sprites ‍♀️
+- Handling gamepad input ️
+- Implementing game settings ⚙️
+- Modeling game states
+- Unlocking Web3 integration
+- Explore the possibilities through interactive demos:
+
+#### [Check out the different game demos Section &rarr;](/examples)
 
 <br />
