@@ -174,6 +174,6 @@ Congratulations on starting your game development journey! 🎉
 
 Ready to level up? To dive deeper, explore drawing shapes, animating sprites, handling gamepad input, game settings, state modeling, and Web3 APIs...
 
-#### [Check out the Tutorials Section &rarr;](/tutorials)
+#### [Check out the Tutorials Section &rarr;](/tutorial)
 
 <br />
