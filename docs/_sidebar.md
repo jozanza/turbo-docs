@@ -1,5 +1,5 @@
 - [Quick Start](/quick-start)
-- [Tutorial](/tutorial)
+- [examples](/examples)
 - [Recipes](/recipes)
 
 <br />
