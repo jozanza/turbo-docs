@@ -25,7 +25,7 @@ The setup requires 3 small steps:
 
 ```toml
 # Enable the solana feature
-turbo = { version = "0.3.6", package = "turbo-genesis-sdk", features = [
+turbo = { version = ">=0.3.8", package = "turbo-genesis-sdk", features = [
 "solana",
 ] }
 
