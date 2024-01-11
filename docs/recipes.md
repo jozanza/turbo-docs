@@ -4,7 +4,11 @@
 
 However, you can follow these instructions to turn your Turbo game into a PWA:
 
-&rarr; https://github.com/jozanza/turbo-web-template
+&rarr; Template repo: https://github.com/jozanza/turbo-web-template
+
+There's also a Codesandbox for those who want to see a live example:
+
+&rarr; Codesandbox: https://codesandbox.io/p/devbox/bonk-runner-srn4pf
 
 ## Solana
 

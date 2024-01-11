@@ -177,13 +177,12 @@ Ready to level up your skills?
 Dive deeper into exciting techniques like:
 
 - Drawing shapes
-- Animating sprites ‍♀️
+- Animating sprites
 - Handling gamepad input ️
-- Implementing game settings ⚙️
+- Implementing game settings
 - Modeling game states
 - Unlocking Web3 integration
-- Explore the possibilities through interactive demos:
 
-#### [Check out the different game demos Section &rarr;](/examples)
+#### [Explore the possibilities through interactive demos &rarr;](/examples)
 
 <br />

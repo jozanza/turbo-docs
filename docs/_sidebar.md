@@ -1,7 +1,7 @@
 - [Quick Start](/quick-start)
-- [Examples](/examples)
+- [API](/api)
 - [Recipes](/recipes)
-- [Turbo API](turbo-api)
+- [Examples](/examples)
 
 <br />
 
