@@ -1,4 +1,4 @@
-**Start Your Turbo Game Development Adventure with 'Hello, World!' 🚀** (~5-10 mins)
+*Start Your Turbo Game Development Adventure with 'Hello, World!' 🚀** (~5-10 mins)
 
 ![Quick Start Banner](_media/quick-start-banner.webp)
 
@@ -26,19 +26,17 @@ Follow the **Recommended** instructions using `rustup` at https://www.rust-lang.
 
 <!-- tabs:end -->
 
-Also, install `cargo-watch` to streamline our workflow:
-
-```bash
-cargo install cargo-watch
-```
-
-
 Next, add the necessary WebAssembly targets:
 
 ```bash
 rustup target add wasm32-unknown-unknown wasm32-wasi
 ```
 
+Also, install `cargo-watch` to streamline our workflow:
+
+```bash
+cargo install cargo-watch
+```
 
 ### Turbo CLI
 
@@ -164,73 +162,11 @@ text!("Yuuurrr!");
 ![Turbo game window with the text "yuuurrr!!!"](_media/yuuurrr.png)
 
 
-Here's a snippet showcasing what's possible with Turbo. Replace the default code in your project's `src/lib.rs` file with the code below. Additionally, in your project folder, create a 'sprite' folder and add the cat image to it:   !["cat"](_media/munch_cat.png)
+And for the purposes of this guide, that's about all there is to it! If you want to keep playing around, the `text!` macro has several optional parameters you can experiment with:
 
 ```rust
-/// This is where your main game loop code goes
-// The stuff in this block will run ~60x per sec
-
-// Define the metadata and settings for your Turbo game using the `turbo::cfg!` macro.
-turbo::cfg! {
-    name = "Turbo intro"
-    version = "1.0.0"
-    author = "Your Name"
-    description = "lfg"
-    [settings]
-    resolution = [256, 144]
-    [solana]
-    http-rpc-url = "http://localhost:8899"
-    ws-rpc-url = "ws://localhost:8900"
-}
-/* This `turbo::cfg!` macro serves as a template for defining metadata and settings in your Turbo game. 
-Feel free to customize it to match the specifics of your project. */
-
-// Initialize the game state struct.
-// The `turbo::init!` block is used to set up the initial state of the game.
-// Here, it initializes a struct called GameState with initial values for the x and y positions.
-// This block ensures that the game starts with a predefined state before entering the main game loop.
-turbo::init! {
-    struct GameState {
-        x_position: i32,
-        y_position: i32,
-    } = {
-        Self {
-            x_position: 30,
-            y_position: 40,
-        }
-    }
-}
-
-// This `turbo::go!` macro block is where the main game loop code resides.
-turbo::go! {
-    // Load the initial game state. 
-    // This function ensures that the game starts with a valid initial state.
-    let state = GameState::load();
-    
-    // Set the background color before adding other elements to the game frame.
-    clear(0x00ffffff); 
-    
-    // Display default text with specified position and color.
-    text!("yurrr!!!");
-    
-    // Display customized text with specified position, color, and font size.
-    text!("yurrr", x = 30, y = 40, color = 0x00ff00ff, font = Font::S);
-    
-    // Draw a filled circle at specified position with specified diameter and color.
-    circ!(x = 128, y = 128, d = 7, fill = 0x000000ff);
-    
-    // Draw a filled rectangle at specified position with specified width, height, and color.
-    rect!(w = 32, h = 32, x = 70, y = 70, fill = 0x0000ffff);
-    
-    // Display a sprite named "cat" at specified position with specified frames per second.
-    sprite!("cat", x = 30, y = 30, fps = 10);
-}
-
-
+text!("Let's gooo!", x = 32, y = 48, color = 0xff00ffff, font = Font::L);
 ```
-
-![snippet"](_media/snippet.png)
-
 
 ## Next Steps
 
@@ -238,7 +174,15 @@ Congratulations on starting your game development journey! 🎉
 
 Ready to level up your skills?
 
-Dive deeper into exciting techniques and Explore the possibilities through interactive demos:
+Dive deeper into exciting techniques like:
+
+- Drawing shapes
+- Animating sprites ‍♀️
+- Handling gamepad input ️
+- Implementing game settings ⚙️
+- Modeling game states
+- Unlocking Web3 integration
+- Explore the possibilities through interactive demos:
 
 #### [Check out the different game demos Section &rarr;](/examples)
 

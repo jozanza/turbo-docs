@@ -1,7 +1,7 @@
 - [Quick Start](/quick-start)
 - [Examples](/examples)
 - [Recipes](/recipes)
-- [Turbo API Overview](turbo-api)
+- [Turbo API](turbo-api)
 
 <br />
 
