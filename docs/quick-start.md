@@ -52,12 +52,15 @@ Install `turbo-cli` by running this script:
 sh -c "$(curl -sSfL https://turbo.computer/install.sh)"
 ```
 
-?> The installer will ask for your password to place the command in `/usr/local/bin`. If you don't want to do this, you can manually download the 64-bit releases and move them to a directory in your `PATH`: [Mac OS ARM](https://turbo.computer/bin/aarch64-apple-darwin/turbo-cli), [Linux x86](https://turbo.computer/bin/x86_64-unknown-linux-gnu/turbo-cli)
+?> When using the installer, you'll be prompted to enter your password to place the command in `/usr/local/bin`. If you prefer not to do this, you can opt for a manual installation by downloading the 64-bit releases:
 <br /><br />
-If you need a binary for another platform, contact [Turbo](https://twitter.com/makegamesfast) on Twitter.
-
-Verify the installation with:
-
+**Mac OS ARM:** [Download](https://turbo.computer/bin/aarch64-apple-darwin/turbo-cli)&nbsp; 
+**Linux x86:** [Download](https://turbo.computer/bin/x86_64-unknown-linux-gnu/turbo-cli)
+<br /><br />
+For Linux users, it's recommended to move the binary to `$HOME/.local/bin`.
+<br /><br />
+If you need a binary for a different platform, feel free to reach out to [Turbo](https://twitter.com/makegamesfast) on Twitter.
+  
 ```bash
 turbo-cli -h
 ```
