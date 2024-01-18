@@ -10,7 +10,7 @@ First, install Rust if it's not already on your system:
 
 <!-- tabs:start -->
 
-#### **macOS / Linux**
+#### **MacOS / Linux**
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -20,9 +20,13 @@ Or follow the instructions at https://www.rust-lang.org/tools/install
 
 #### **Windows**
 
-Follow the **Recommended** instructions using `rustup` at https://www.rust-lang.org/tools/install
+**MSVC**
 
-!> `turbo-cli` cannot open a window in Windows Subsystem for Linux at the moment due to some quirks of the Wayland display server protocol it uses.
+For a typical setup, follow the **Recommended** instructions using `rustup` at https://www.rust-lang.org/tools/install
+
+**WSL**
+
+For a Windows Linux Subsystem environment, follow the instructions for MacOS / Linux.
 
 <!-- tabs:end -->
 
@@ -40,34 +44,34 @@ cargo install cargo-watch
 
 ### Turbo CLI
 
-Now that our dependencies installed, let's also install `turbo-cli`:
+Now that our dependencies installed, let's also install `turbo`:
 
 <!-- tabs:start -->
 
 #### **macOS / Linux**
 
-Install `turbo-cli` by running this script:
+Install `turbo` by running this script:
 
 ```bash
 sh -c "$(curl -sSfL https://turbo.computer/install.sh)"
 ```
 
-?> The installer will ask for your password to place the command in `/usr/local/bin`. If you don't want to do this, you can manually download the 64-bit releases and move them to a directory in your `PATH`: [Mac OS ARM](https://turbo.computer/bin/aarch64-apple-darwin/turbo-cli), [Linux x86](https://turbo.computer/bin/x86_64-unknown-linux-gnu/turbo-cli)
+?> The installer will ask for your password to place the command in `/usr/local/bin`. If you don't want to do this, you can manually download the 64-bit releases and move them to a directory in your `PATH`: [Mac OS ARM](https://turbo.computer/bin/aarch64-apple-darwin/turbo), [Linux x86](https://turbo.computer/bin/x86_64-unknown-linux-gnu/turbo)
 <br /><br />
 If you need a binary for another platform, contact [Turbo](https://twitter.com/makegamesfast) on Twitter.
 
 Verify the installation with:
 
 ```bash
-turbo-cli -h
+turbo -h
 ```
 
-If successful, you'll see `turbo-cli`'s help documentation:
+If successful, you'll see `turbo`'s help documentation:
 
 ```bash
 Run Turbo games natively on desktop
 
-Usage: turbo-cli <COMMAND>
+Usage: turbo <COMMAND>
 
 Commands:
   init  Initializes a new Turbo project in Rust
@@ -82,24 +86,58 @@ Options:
 
 #### **Windows**
 
-1. Download the 64-bit release for [Windows x86](https://turbo.computer/bin/x86_64-pc-windows-msvc/turbo-cli.exe.zip)
-2. If it doesn't already exist, create a folder at `C:\Users\YOUR_USERNAME\bin`
-3. Unzip the file and move `turbo-cli.exe` into that folder
+Follow these steps to install `turbo` on Windows:
+
+1. Download the 64-bit release for [Windows MSVC](https://turbo.computer/bin/turbo-0.2.0-x86_64-pc-windows-msvc/turbo.exe.zip).
+2. If it doesn't already exist, create a folder at `C:\Users\YOUR_USERNAME\bin`.
+3. Unzip the file and move `turbo.exe` into that folder.
 
 Make sure you have [Git for Windows](https://git-scm.com/download/win) installed.
 
 **Open Git Bash**. Verify the installation with:
 
 ```bash
-turbo-cli -h
+turbo -h
 ```
 
-If successful, you'll see `turbo-cli`'s help documentation:
+If successful, you'll see `turbo`'s help documentation:
 
 ```bash
 Run Turbo games natively on desktop
 
-Usage: turbo-cli.exe <COMMAND>
+Usage: turbo.exe <COMMAND>
+
+Commands:
+  init  Initializes a new Turbo project in Rust
+  run   Runs a Rust Turbo project
+  help  Print this message or the help of the given subcommand(s)
+
+Options:
+  -v, --version  Print version
+  -h, --help     Print help
+  -V, --version  Print version
+```
+
+#### **Windows (WSL)**
+
+Follow these steps to install `turbo` on Windows Linux Subsystem (WSL):
+
+1. Download the 64-bit release for [Windows Linux Subsystem](https://turbo.computer/bin/turbo-0.2.0-x86_64-pc-windows-gnu/turbo.exe.zip).
+2. Unzip the file and move `turbo.exe` into that folder.
+3. Copy the `turbo.exe` command to `/usr/local/bin`.
+
+In your WSL shell, verify the installation with:
+
+```bash
+turbo -h
+```
+
+If successful, you'll see `turbo`'s help documentation:
+
+```bash
+Run Turbo games natively on desktop
+
+Usage: turbo.exe <COMMAND>
 
 Commands:
   init  Initializes a new Turbo project in Rust
@@ -118,14 +156,14 @@ Options:
 
 ## Development
 
-?> Windows users should always run `turbo-cli` in Git Bash.
+?> Windows users should always run `turbo` in Git Bash.
 
 ### Creating a Game
 
 Begin by creating a new project called "hello-world":
 
 ```
-turbo-cli init hello-world
+turbo init hello-world
 ```
 
 This initializes a rust crate in a `hello-world` directory. Open it in your preferred editor.
@@ -136,7 +174,7 @@ This initializes a rust crate in a `hello-world` directory. Open it in your pref
 To view your game, run the following command at the root of the project directory:
 
 ```
-turbo-cli run -w .
+turbo run -w .
 ```
 ?> The `-w` flag auto-refreshes your game window as you code. Just be sure to watch the console for compiler errors.
 
