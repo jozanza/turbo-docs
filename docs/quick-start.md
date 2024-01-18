@@ -48,7 +48,7 @@ Now that our dependencies installed, let's also install `turbo`:
 
 <!-- tabs:start -->
 
-#### **macOS / Linux**
+#### **MacOS / Linux**
 
 Install `turbo` by running this script:
 
