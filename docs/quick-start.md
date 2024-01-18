@@ -56,7 +56,7 @@ Install `turbo` by running this script:
 sh -c "$(curl -sSfL https://turbo.computer/install.sh)"
 ```
 
-?> The installer will ask for your password to place the command in `/usr/local/bin`. If you don't want to do this, you can manually download the 64-bit releases and move them to a directory in your `PATH`: [Mac OS ARM](https://turbo.computer/bin/aarch64-apple-darwin/turbo), [Linux x86](https://turbo.computer/bin/x86_64-unknown-linux-gnu/turbo)
+?> The installer will ask for your password to place the command in `/usr/local/bin`. If you don't want to do this, you can manually download the 64-bit releases and move them to a directory in your `PATH`: [Mac OS ARM](https://turbo.computer/bin/turbo-0.2.0-aarch64-apple-darwin/turbo), [Mac OS x86](https://turbo.computer/bin/turbo-0.2.0-x86_64-apple-darwin/turbo), [Linux (GNU)](https://turbo.computer/bin/turbo-0.2.0-x86_64-unknown-linux-gnu/turbo), [Linux (MUSL)](https://turbo.computer/bin/turbo-0.2.0-x86_64-unknown-linux-musl/turbo)
 <br /><br />
 If you need a binary for another platform, contact [Turbo](https://twitter.com/makegamesfast) on Twitter.
 
