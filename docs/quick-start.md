@@ -56,7 +56,7 @@ Install `turbo` by running this script:
 sh -c "$(curl -sSfL https://turbo.computer/install.sh)"
 ```
 
-?> The installer will ask for your password to place the command in `/usr/local/bin`. If you don't want to do this, you can manually download the 64-bit releases and move them to a directory in your `PATH`: [Mac OS ARM](https://turbo.computer/bin/turbo-0.2.0-aarch64-apple-darwin/turbo), [Mac OS x86](https://turbo.computer/bin/turbo-0.2.0-x86_64-apple-darwin/turbo), [Linux (GNU)](https://turbo.computer/bin/turbo-0.2.0-x86_64-unknown-linux-gnu/turbo), [Linux (MUSL)](https://turbo.computer/bin/turbo-0.2.0-x86_64-unknown-linux-musl/turbo)
+?> The installer will ask for your password to place the command in `/usr/local/bin`. If you don't want to do this, you can manually download the 64-bit releases and move them to a directory in your `PATH`: [Mac OS ARM](https://turbo.computer/bin/turbo-0.2.1-aarch64-apple-darwin/turbo), [Mac OS x86](https://turbo.computer/bin/turbo-0.2.1-x86_64-apple-darwin/turbo), [Linux (GNU)](https://turbo.computer/bin/turbo-0.2.1-x86_64-unknown-linux-gnu/turbo), [Linux (MUSL)](https://turbo.computer/bin/turbo-0.2.1-x86_64-unknown-linux-musl/turbo)
 <br /><br />
 If you need a binary for another platform, contact [Turbo](https://twitter.com/makegamesfast) on Twitter.
 
@@ -88,7 +88,7 @@ Options:
 
 Follow these steps to install `turbo` on Windows:
 
-1. Download the 64-bit release for [Windows MSVC](https://turbo.computer/bin/turbo-0.2.0-x86_64-pc-windows-msvc/turbo.exe.zip).
+1. Download the 64-bit release for [Windows MSVC](https://turbo.computer/bin/turbo-0.2.1-x86_64-pc-windows-msvc/turbo.exe.zip).
 2. If it doesn't already exist, create a folder at `C:\Users\YOUR_USERNAME\bin`.
 3. Unzip the file and move `turbo.exe` into that folder.
 
@@ -122,7 +122,7 @@ Options:
 
 Follow these steps to install `turbo` on Windows Linux Subsystem (WSL):
 
-1. Download the 64-bit release for [Windows Linux Subsystem](https://turbo.computer/bin/turbo-0.2.0-x86_64-pc-windows-gnu/turbo.exe.zip).
+1. Download the 64-bit release for [Windows Linux Subsystem](https://turbo.computer/bin/turbo-0.2.1-x86_64-pc-windows-gnu/turbo.exe.zip).
 2. Unzip the file and move `turbo.exe` into that folder.
 3. Copy the `turbo.exe` command to `/usr/local/bin`.
 
