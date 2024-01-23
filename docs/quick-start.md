@@ -1,4 +1,4 @@
-*Start Your Turbo Game Development Adventure with 'Hello, World!' 🚀** (~5-10 mins)
+**Start Your Turbo Game Development Adventure with 'Hello, World!' 🚀** (~5-10 mins)
 
 ![Quick Start Banner](_media/quick-start-banner.webp)
 
