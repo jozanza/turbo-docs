@@ -1,6 +1,6 @@
 ## Deploying
 
-`turbo-cli` doesn't have a built-in commands for bundling/deploying your game yet.
+`turbo` doesn't have a built-in commands for bundling/deploying your game yet.
 
 However, you can follow these instructions to turn your Turbo game into a PWA:
 
@@ -52,10 +52,10 @@ turbo::cfg!{r#"
 
 #### 3. Set the user
 
-When running `turbo-cli`, you will need to specify the private key of the user via a `TURBO_SOL_USER` env var:
+When running `turbo`, you will need to specify the private key of the user via a `TURBO_SOL_USER` env var:
 
 ```bash
-TURBO_SOL_USER=<insert base58 private key> turbo-cli run -w path/to/my/project
+TURBO_SOL_USER=<insert base58 private key> turbo run -w path/to/my/project
 ```
 
 ?> You may also set a `TURBO_SOL_PAYER` private key as well if you wish for the payer to be different than the user.
