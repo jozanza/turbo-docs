@@ -36,8 +36,6 @@ And with that, we have ourselves an upside-down goblin:
 
 ### Animated Sprites
 
-Use your preferred image editing software to create a sprite with a landscape aspect ratio, where each frame of the animation is placed side-by-side horizontally within the image.
-
 Turbo treats sprites with a landscape aspect ratio like a "film strip". So a sprite like this...
 
 ![Doge animation strip](/_media/doge.png)
@@ -48,9 +46,10 @@ Turbo treats sprites with a landscape aspect ratio like a "film strip". So a spr
 
 ```rust
 // Display a sprite named "doge" at specified position with a fast frame rate.
-sprite!("doge", x = 112, y = 50, fps = fps::FAST);   
+sprite!("doge", x = 112, y = 50, fps = fps::FAST);
 ```
-?>Turbo automatically exports the following framerate constants from its canvas module:
+
+Turbo automatically exports the following framerate constants from its canvas module:
 
 - `fps::REALLY_SLOW`: Represents a really slow frame rate.
 - `fps::SLOW` Represents a slow frame rate.
