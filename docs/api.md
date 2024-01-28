@@ -310,8 +310,6 @@ The `resolution` function returns an array [u32; 2] representing the screen dime
 A simple moving rectangle and upward-moving circle.  Check out the source code [here](https://gist.github.com/tajerdev/d27b9b1b406c97b3b0972ee6d57980e5).
 
 
-
-
 ![A simple moving rectangle and upward-moving circle](/_media/gamesave.gif)
 
 
