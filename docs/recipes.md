@@ -138,7 +138,7 @@ let instruction = Instruction {
     data
 };
 let tx = Transaction::new_with_payer(&[instruction], None);
-let tx_hash = hashsolana::sign_and_send_transaction(&tx);
+let tx_hash = solana::sign_and_send_transaction(&tx);
 ```
 
 ### Fetch an Account
@@ -164,30 +164,11 @@ if !res.is_fetched() {
 
 ### Deserialize Account Data
 
-#### Anchor
-
-```rust
-use turbo::solana;
-use solana::{anchor, rpc::AccountInfo};
-use my_anchor_program::MyAnchorAccount;
-
-let account: AccountInfo = ...;
-match anchor::try_from_slice::<MyAnchorAccount>(&account.data) {
-    Ok(data) => {
-        // Do stuff with deserialized data.
-    }
-    Err(err) => {
-        // Uh oh deserialization error.
-    }
-}
-```
-
-?> If the Anchor account has extra space allocated, follow the instructions in the next section.
-
 #### Borsh
 
 Use this approach if one of the following is true:
 
+- You are interacting with an Anchor program
 - You are interacting with a non-Anchor program that borsh-encodes account data
 - You are deserializing an account that has extra space allocated
 
@@ -199,7 +180,7 @@ use my_anchor_program::MyAnchorAccount;
 let account: AccountInfo = ...;
 // You will need to skip the first 8 bytes when decoding an Anchor struct.
 // Those bytes are reserved for a "discriminator" – basically, the struct's IDL schema identifier.
-match MyAnchorAccount::deserialize(&account.data[8..]) {
+match MyAnchorAccount::deserialize(&mut account.data.get(8..).unwrap_or(&[])) {
     Ok(data) => {
         // Do stuff with deserialized data.
     }
