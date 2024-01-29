@@ -14,7 +14,7 @@ Both gamepad and mouse controls use the `Button` enum to represent the input sta
 
 By default, all buttons are in the `Released` state when no input is detected.
 
-### Gamepad controls
+### Gamepad
 
 Turbo's "gamepad" is similar to a SNES controller and maps up to 2 player's gamepad input to the keyboard:
 
@@ -93,7 +93,7 @@ match gp.start {
 }
 ```
 
-### Mouse control
+### Mouse
 
 ?> In Turbo, mouse input automatically converts to touch input on mobile devices.
 
