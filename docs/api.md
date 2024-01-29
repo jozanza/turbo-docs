@@ -1,6 +1,78 @@
 Turbo aims to be as simple as possible to help you learn and make 2D games fast.
 The following section provides an overview of [Turbo's Rust SDK](https://docs.rs/turbo-genesis-sdk/).
 
+## Gameplay Controls
+
+Turbo provides convenient ways to handle user input, allowing you to make your games interactive.
+
+### Keyboard control
+
+Turbo's "gamepad" keyboard controls are as follows:
+
+#### Player 1 Controls:
+
+- **Up**: W or Up Arrow
+- **Down**: S or Down Arrow
+- **Left**: A or Left Arrow
+- **Right**: D or Right Arrow
+- **A**: Z
+
+#### Player 2 Controls:
+
+- **Up**: I
+- **Down**: K
+- **Left**: J
+- **Right**: L
+- **A**: M
+
+To retrieve the gamepad state of a player, use the `gamepad` function. The player is 0-indexed, so P1 is 0, P2 is 1, etc.
+
+```rust
+// get the gamepad state for player 1
+let p1_gamepad = gamepad(0);
+// get the gamepad state for player 2
+let p2_gamepad = gamepad(1);
+```
+To check the button states for players, you can utilize the following methods after obtaining the gamepad state using the `gamepad` function.
+
+```rust
+// Checks if the input state is Released or JustReleased.
+if p1_gamepad.up.released() {
+    // Handle released state
+}
+// Checks if the input state is Pressed or JustPressed.
+if p1_gamepad.right.pressed() {
+    // Handle pressed state
+}
+```
+?>  Default Behavior: By default, all buttons are in the "Released" state when no input is detected.
+### Mouse control 
+
+Turbo simplifies mouse input handling, making it easy to capture events such as button presses and cursor movements in your game.
+
+Check Mouse Clicks
+```rust
+// Check if the left mouse button is pressed
+if mouse(0).left.pressed() {
+    // Perform actions when the left mouse button is pressed
+    let [mx, my] = mouse(0).position;
+}
+```
+Render Mouse Cursor
+```rust
+let m = mouse(0);
+let [mx, my] = m.position;
+circ!(d = 8, x = mx - 4, y = my - 4, fill = 0xff00ffff);
+```
+
+
+
+A simple mouse clicking snippet.  Check out the source code [here](https://gist.github.com/tajerdev/4a18cf63972b5fec9b3de3a4261a1da2)
+
+![mousepad](/_media/mousepad.gif)
+
+?> Handling Input in the Game Loop: Ensure that you call the gamepad and mouse functions within your game loop to get real-time input updates.
+
 ## Drawing Sprites
 
 ### Setup
