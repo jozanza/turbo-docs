@@ -5,7 +5,7 @@ The following section provides an overview of [Turbo's Rust SDK](https://docs.rs
 
 Turbo provides convenient ways to handle gamepad and mouse input from players, allowing you to make your games interactive.
 
-Both gamepad and mouse controls have buttons that may be in one of the following states:
+Both gamepad and mouse controls use the `Button` enum to represent the input state of their buttons:
 
 - `Button::JustPressed` - The button was just pressed this frame.
 - `Button::Pressed` - The button has been held for more than one frame.
@@ -46,26 +46,38 @@ let p2_gamepad = gamepad(1);
 To check the button states for players, utilize the following methods after obtaining the gamepad state using the `gamepad` function:
 
 ```rust
-// Checks if the input state is Released or JustReleased.
-if p1_gamepad.up.released() {
-    // Handle released state
-}
+// Get the gamepad state for player 1
+let gp = gamepad(0);
 
-// Checks if the input state is Pressed or JustPressed.
-if p1_gamepad.right.just_pressed() {
+// Checks if the A button is JustPressed
+if gp.a.just_pressed() {
     // Handle JustPressed state
 }
 
-// Checks if the input state is JustPressed or Pressed
-if p1_gamepad.right.pressed() {
-    // Handle JustPressed or Pressed states
+// Checks if the A button is JustPressed or Pressed
+if gp.a.pressed() {
+    // Handle JustPressed and Pressed states
+}
+
+// Checks if the A button is JustReleased
+if gp.a.just_released() {
+    // Handle JustReleased state
+}
+
+// Checks if the A button is JustReleased or Released
+if gp.a.released() {
+    // Handle JustReleased and Released states
 }
 ```
 
 You can also match on the `Button` enum directly:
 
 ```rust
-match p1_gamepad.start {
+// Get the gamepad state for player 1
+let gp = gamepad(0);
+
+// Check the input state of the Start button
+match gp.start {
     Button::JustPressed => {
         // Handle the JustPressed state
     },
@@ -79,49 +91,64 @@ match p1_gamepad.start {
         // Handle the Released state
     },
 }
-
 ```
 
-### Mouse control 
+### Mouse control
 
-To retrieve the mouse state of a player, use the `mouse` function. The player is 0-indexed, so P1 is 0, P2 is 1, etc.
+?> In Turbo, mouse input automatically converts to touch input on mobile devices.
+
+To retrieve the mouse state of a player, use the `mouse` function. The player is 0-indexed, so P1 is 0, P2 is 1, etc. Right now, only P1 is supported.
 
 ```rust
-// get the gamepad state for player 1
-let p1_gamepad = gamepad(0);
-
-// get the gamepad state for player 2
-let p2_gamepad = gamepad(1);
-```
-
-Check Mouse Clicks
-```rust
-// Check if the left mouse button is pressed
+// Get the mouse state for player 1
 let p1_mouse = mouse(0);
-if p1_mouse.left.pressed() {
-    // Perform actions when the left mouse button is pressed
-    let [mx, my] = mouse(0).position;
+```
+
+The mouse input is similar to a gamepad except there are only two buttons – left and right.
+
+```rust
+// Get the mouse state for player 1
+let m = mouse(0);
+
+// Checks if the left mouse button is JustPressed (similar to a click)
+if m.left.just_pressed() {
+    // Handle JustPressed state
 }
 
-if p1_mouse.right.pressed() {
-    // Perform actions when the left mouse button is pressed
-    let [mx, my] = mouse(0).position;
+// Checks if the left mouse button is JustPressed or Pressed
+if m.left.pressed() {
+    // Handle JustPressed and Pressed states
+}
+
+// Checks if the left mouse button is JustReleased
+if m.left.just_released() {
+    // Handle JustReleased
+}
+
+// Checks if the left mouse button is JustReleased or Released
+if m.left.released() {
+    // Handle JustReleased and Released states
 }
 ```
 
-Render Mouse Cursor
+The mouse's position is also readily available. You can draw a small circular cursor at the mouse's position using the following snippet:
 
 ```rust
+// Get the mouse state for player 1
 let m = mouse(0);
+
+// Get the mouse's x and y positions
 let [mx, my] = m.position;
+
+// Draw a circlulkar cursor
 circ!(d = 8, x = mx - 4, y = my - 4, fill = 0xff00ffff);
 ```
 
-
-
-A simple mouse clicking snippet.  Check out the source code [here](https://gist.github.com/tajerdev/4a18cf63972b5fec9b3de3a4261a1da2)
+Mouse input is great for small games. Here's an example:
 
 ![mousepad](/_media/mousepad.gif)
+
+Check out the source code [here](https://gist.github.com/tajerdev/4a18cf63972b5fec9b3de3a4261a1da2)
 
 ?> Handling Input in the Game Loop: Ensure that you call the gamepad and mouse functions within your game loop to get real-time input updates.
 
