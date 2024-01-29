@@ -3,78 +3,114 @@ The following section provides an overview of [Turbo's Rust SDK](https://docs.rs
 
 ## Gameplay Controls
 
-Turbo provides convenient ways to handle user input, allowing you to make your games interactive.
+Turbo provides convenient ways to handle gamepad and mouse input from players, allowing you to make your games interactive.
 
-### Keyboard control
+Both gamepad and mouse controls have buttons that may be in one of the following states:
 
-Turbo's "gamepad" keyboard controls are as follows:
+- `Button::JustPressed` - The button was just pressed this frame.
+- `Button::Pressed` - The button has been held for more than one frame.
+- `Button::JustReleased` - The button was just released this frame.
+- `Button::Released` - The button has been released for more than one frame.
 
-#### Player 1 Controls:
+By default, all buttons are in the `Released` state when no input is detected.
 
-- **Up:** W or Up Arrow
-- **Down:** S or Down Arrow
-- **Left:** A or Left Arrow
-- **Right:** D or Right Arrow
-- **A:** Z
-- **B:** X
-- **X:** C
-- **Y:** V
-- **Start:** Space
-- **Select:** Enter
+### Gamepad controls
 
-#### Player 2 Controls:
+Turbo's "gamepad" is similar to a SNES controller and maps up to 2 player's gamepad input to the keyboard:
 
-- **Up:** I
-- **Down:** K
-- **Left:** J
-- **Right:** L
-- **A:** M
-- **B:** ,
-- **X:** .
-- **Y:** /
-- **Start:** [
-- **Select:** ]
+| Gamepad | Keyboard (P1)       | Keyboard (P2)       | 
+| ------- | ------------------- | ------------------- |
+| Up      | `W` or `UpArrow`    | `I`                 |
+| Down    | `A` or `DownArrow`  | `J`                 |
+| Left    | `S` or `LeftArrow`  | `K`                 |
+| Right   | `D` or `RightArrow` | `L`                 |
+| A       | `Z`                 | `M`                 |
+| B       | `X`                 | `,`                 |
+| X       | `C`                 | `.`                 |
+| Y       | `V`                 | `/`                 |
+| Start   | `Space`             | `[`                 |
+| Select  | `Enter`             | `]`                 |
 
+?> Turbo will support actual gamepad input in a future update.
 
 To retrieve the gamepad state of a player, use the `gamepad` function. The player is 0-indexed, so P1 is 0, P2 is 1, etc.
 
 ```rust
-// get the gamepad state for player 1
+// Get the gamepad state for player 1
 let p1_gamepad = gamepad(0);
-// get the gamepad state for player 2
+
+// Get the gamepad state for player 2
 let p2_gamepad = gamepad(1);
 ```
-To check the button states for players, you can utilize the following methods after obtaining the gamepad state using the `gamepad` function.
+
+To check the button states for players, utilize the following methods after obtaining the gamepad state using the `gamepad` function:
 
 ```rust
 // Checks if the input state is Released or JustReleased.
-if  p1_gamepad.up.released() {
+if p1_gamepad.up.released() {
     // Handle released state
 }
+
 // Checks if the input state is Pressed or JustPressed.
+if p1_gamepad.right.just_pressed() {
+    // Handle JustPressed state
+}
+
+// Checks if the input state is JustPressed or Pressed
 if p1_gamepad.right.pressed() {
-    // Handle pressed state
+    // Handle JustPressed or Pressed states
 }
 ```
-?>  Default Behavior: By default, all buttons are in the "Released" state when no input is detected.
+
+You can also match on the `Button` enum directly:
+
+```rust
+match p1_gamepad.start {
+    Button::JustPressed => {
+        // Handle the JustPressed state
+    },
+    Button::Pressed => {
+        // Handle the Pressed state
+    },
+    Button::JustReleased => {
+        // Handle the JustReleased state
+    },
+    Button::JustReleased => {
+        // Handle the Released state
+    },
+}
+
+```
+
 ### Mouse control 
 
-Turbo simplifies mouse input handling, making it easy to capture events such as button presses and cursor movements in your game.
+To retrieve the mouse state of a player, use the `mouse` function. The player is 0-indexed, so P1 is 0, P2 is 1, etc.
+
+```rust
+// get the gamepad state for player 1
+let p1_gamepad = gamepad(0);
+
+// get the gamepad state for player 2
+let p2_gamepad = gamepad(1);
+```
 
 Check Mouse Clicks
 ```rust
 // Check if the left mouse button is pressed
-if  mouse(0).left.pressed() {
+let p1_mouse = mouse(0);
+if p1_mouse.left.pressed() {
     // Perform actions when the left mouse button is pressed
     let [mx, my] = mouse(0).position;
 }
 
-if  mouse(0).right.pressed() {
+if p1_mouse.right.pressed() {
     // Perform actions when the left mouse button is pressed
     let [mx, my] = mouse(0).position;
 }
 ```
+
 Render Mouse Cursor
+
 ```rust
 let m = mouse(0);
 let [mx, my] = m.position;
