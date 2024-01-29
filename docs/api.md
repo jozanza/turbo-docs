@@ -11,19 +11,30 @@ Turbo's "gamepad" keyboard controls are as follows:
 
 #### Player 1 Controls:
 
-- **Up**: W or Up Arrow
-- **Down**: S or Down Arrow
-- **Left**: A or Left Arrow
-- **Right**: D or Right Arrow
-- **A**: Z
+- **Up:** W or Up Arrow
+- **Down:** S or Down Arrow
+- **Left:** A or Left Arrow
+- **Right:** D or Right Arrow
+- **A:** Z
+- **B:** X
+- **X:** C
+- **Y:** V
+- **Start:** Space
+- **Select:** Enter
 
 #### Player 2 Controls:
 
-- **Up**: I
-- **Down**: K
-- **Left**: J
-- **Right**: L
-- **A**: M
+- **Up:** I
+- **Down:** K
+- **Left:** J
+- **Right:** L
+- **A:** M
+- **B:** ,
+- **X:** .
+- **Y:** /
+- **Start:** [
+- **Select:** ]
+
 
 To retrieve the gamepad state of a player, use the `gamepad` function. The player is 0-indexed, so P1 is 0, P2 is 1, etc.
 
@@ -37,7 +48,7 @@ To check the button states for players, you can utilize the following methods af
 
 ```rust
 // Checks if the input state is Released or JustReleased.
-if p1_gamepad.up.released() {
+if  p1_gamepad.up.released() {
     // Handle released state
 }
 // Checks if the input state is Pressed or JustPressed.
@@ -53,7 +64,12 @@ Turbo simplifies mouse input handling, making it easy to capture events such as 
 Check Mouse Clicks
 ```rust
 // Check if the left mouse button is pressed
-if mouse(0).left.pressed() {
+if  mouse(0).left.pressed() {
+    // Perform actions when the left mouse button is pressed
+    let [mx, my] = mouse(0).position;
+}
+
+if  mouse(0).right.pressed() {
     // Perform actions when the left mouse button is pressed
     let [mx, my] = mouse(0).position;
 }
