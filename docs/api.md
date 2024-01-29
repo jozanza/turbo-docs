@@ -150,8 +150,6 @@ Mouse input is great for small games. Here's an example:
 
 Check out the source code [here](https://gist.github.com/tajerdev/4a18cf63972b5fec9b3de3a4261a1da2)
 
-?> Handling Input in the Game Loop: Ensure that you call the gamepad and mouse functions within your game loop to get real-time input updates.
-
 ## Drawing Sprites
 
 ### Setup
