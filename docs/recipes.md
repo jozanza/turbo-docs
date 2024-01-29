@@ -75,7 +75,7 @@ use turbo::solana::solana_sdk;
 use solana_sdk::pubkey::Pubkey;
 use std::str::FromStr;
 
- let program_id_str = "insert_id_here";
+let program_id_str = "insert_id_here";
     let program_id: Pubkey = Pubkey::from_str(program_id_str)
     .expect("Error parsing program ID");
 
@@ -98,9 +98,9 @@ use solana_sdk::{instruction::AccountMeta, pubkey::Pubkey};
 use my_anchor_program::instructions::DoSomething;
 use std::str::FromStr;
 
- let program_id_str = "insert_id_here";
- let program_id: Pubkey = Pubkey::from_str(program_id_str)
-  .expect("Error parsing ID");
+let program_id_str = "insert_id_here";
+let program_id: Pubkey = Pubkey::from_str(program_id_str)
+    .expect("Error parsing ID");
 
 let instruction_name = "name_of_anchor_instruction";
 let accounts: Vec<AccountMeta> = vec![...];
