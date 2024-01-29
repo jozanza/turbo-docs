@@ -170,7 +170,6 @@ Use this approach if one of the following is true:
 
 - You are interacting with an Anchor program
 - You are interacting with a non-Anchor program that borsh-encodes account data
-- You are deserializing an account that has extra space allocated
 
 ```rust
 use turbo::solana;
