@@ -48,7 +48,7 @@ To check the button states for players, you can utilize the following methods af
 
 ```rust
 // Checks if the input state is Released or JustReleased.
-if p1_gamepad.up.released() {
+if  p1_gamepad.up.released() {
     // Handle released state
 }
 // Checks if the input state is Pressed or JustPressed.
@@ -64,7 +64,12 @@ Turbo simplifies mouse input handling, making it easy to capture events such as 
 Check Mouse Clicks
 ```rust
 // Check if the left mouse button is pressed
-if mouse(0).left.pressed() {
+if  mouse(0).left.pressed() {
+    // Perform actions when the left mouse button is pressed
+    let [mx, my] = mouse(0).position;
+}
+
+if  mouse(0).right.pressed() {
     // Perform actions when the left mouse button is pressed
     let [mx, my] = mouse(0).position;
 }
