@@ -369,20 +369,20 @@ state.save();  // Save game state for the next frame
 ```
 This function ensures that the game state is persisted, allowing for a seamless transition between frames and preserving the player's progress.
 
-### Auto-Looping Screen
+## Resolution
 
-In Turbo, `resolution()[0]` is the screen width, and `resolution()[1]` is the height. For seamless object movement. 
-In this code sample, when `state.circle_y` drops below 0.0, it resets to `resolution()[1]`. Objects smoothly loop from top to bottom.
+In Turbo, you may access the canvas's dimension via the `resolution()` function. This function returns an `[u32; 2]` representing the game canvas's dimensions. This information can be used to create adaptive layouts or even factor into gameplay.
+
+To demonstrate, in the following example, when `state.circle_y` goes out of the top of the screen, it smoothly loops back to the bottom.
 
 ```rust
 // If the circle moves off the screen upwards, reset its position to the bottom of the screen
 if state.circle_y < 0.0 {
-    state.circle_y = resolution()[1] as f32;
+    let [_w, h] = resolution();
+    state.circle_y = h as f32;
 }
 
 ```
-The `resolution` function returns an array [u32; 2] representing the screen dimensions.
-
 
 A simple moving rectangle and upward-moving circle.  Check out the source code [here](https://gist.github.com/tajerdev/d27b9b1b406c97b3b0972ee6d57980e5).
 
