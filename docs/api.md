@@ -140,7 +140,7 @@ let m = mouse(0);
 // Get the mouse's x and y positions
 let [mx, my] = m.position;
 
-// Draw a circlulkar cursor
+// Draw a circular cursor
 circ!(d = 8, x = mx - 4, y = my - 4, fill = 0xff00ffff);
 ```
 
